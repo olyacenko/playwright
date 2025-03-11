@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-  
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -24,7 +24,7 @@ jobs:
 
       - name: Install Playwright browsers
         run: npx playwright install --with-deps
-        
+
       - name: Run Playwright tests
         run: npx playwright test
 
@@ -56,4 +56,6 @@ jobs:
         with:
           branch: gh_pages
           folder: allure-report
+          clean: true
+          single-commit: true
           token: ${{ secrets.GITHUB_TOKEN }}
