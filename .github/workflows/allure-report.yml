@@ -51,9 +51,9 @@ jobs:
       - name: Generate Allure report
         run: npx allure-commandline generate allure-results --clean -o allure-report
 
-      - name: Deploy report to gh-pages
+      - name: Deploy report to gh_pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages
+          branch: gh_pages
           folder: allure-report
           token: ${{ secrets.GITHUB_TOKEN }}
